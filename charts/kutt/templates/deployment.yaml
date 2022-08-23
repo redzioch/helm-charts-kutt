@@ -32,7 +32,9 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           env:
+            {{- if .Values.env }}
             {{- toYaml .Values.env | nindent 12 }}
+            {{- end }}
             # Mail Settings
             - name: MAIL_HOST
               value: {{ .Values.mail.host }}
