@@ -121,6 +121,23 @@ spec:
                   key: {{ include "redis.secretPasswordKey" .Subcharts.redis }}
             {{- end }}
             {{- end }}
+            # Application Settings
+            - name: ADMIN_EMAILS
+              value: {{ join "," .Values.appConfig.adminEmails | quote}}
+            - name: DEFAULT_MAX_STATS_PER_LINK
+              value: {{ .Values.appConfig.defaultMaxStatsPerLink | quote}}
+            - name: DISALLOW_ANONYMOUS_LINKS
+              value: {{ .Values.appConfig.disallowAnonymousLinks | quote}}
+            - name: DISALLOW_REGISTRATION
+              value: {{ .Values.appConfig.disallowRegistration | quote}}
+            - name: LINK_LENGT
+              value: {{ .Values.appConfig.linkLength | quote}}
+            - name: REPORT_EMAIL
+              value: {{ .Values.appConfig.reportEmail | quote}}
+            - name: SITE_NAME
+              value: {{ .Values.appConfig.siteName | quote}}
+            - name: USER_LIMIT_PER_DAY
+              value: {{ .Values.appConfig.userLimitPerDay | quote}}
           {{- with .Values.securityContext }}
           securityContext:
             {{- toYaml . | nindent 12 }}

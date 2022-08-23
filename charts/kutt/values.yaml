@@ -14,28 +14,22 @@ imagePullSecrets: []
 # Please see https://github.com/thedevs-network/kutt/blob/develop/.docker.env for complete list of environment variables.
 # Secret Keys and mail settings are provided through their own values `secretEnvs` and `mail`.
 env:
-  - name: ADMIN_EMAILS
-    value: ""
   - name: CUSTOM_DOMAIN_USE_HTTPS
     value: "false"
   - name: DEFAULT_DOMAIN
     value: "localhost:3000"
-  - name: DEFAULT_MAX_STATS_PER_LINK
-    value: "5000"
-  - name: DISALLOW_ANONYMOUS_LINKS
-    value: "false"
-  - name: DISALLOW_REGISTRATION
-    value: "false"
-  - name: LINK_LENGT
-    value: "6"
-  - name: NON_USER_COOLDOWN
-    value: "0"
-  - name: REPORT_EMAIL
-    value: ""
-  - name: SITE_NAME
-    value: "Kutt"
-  - name: USER_LIMIT_PER_DAY
-    value: "50"
+
+appConfig:
+  ## @param appConfig.adminEmails Set array of emails (strings)
+  adminEmails:
+  siteName: Kutt
+  defaultMaxStatsPerLink: 5000
+  linkLength: 6
+  nonUserCooldown: 0
+  userLimitPerDay: 50
+  disallowAnonymousLinks: false
+  disallowRegistration: false
+  reportEmail: ""
 
 envSecrets:
   google:
@@ -90,10 +84,12 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
+podSecurityContext:
+  {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  {}
   # capabilities:
   #   drop:
   #   - ALL
@@ -108,7 +104,8 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -121,7 +118,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following

@@ -221,6 +221,38 @@
                 }
             }
         },
+        "appConfig": {
+            "type": "object",
+            "properties": {
+                "adminEmails": {
+                    "type": ["array", "null"]
+                },
+                "siteName": {
+                    "type": "string"
+                },
+                "defaultMaxStatsPerLink": {
+                    "type": "integer"
+                },
+                "linkLength": {
+                    "type": "integer"
+                },
+                "nonUserCooldown": {
+                    "type": "integer"
+                },
+                "userLimitPerDay": {
+                    "type": "integer"
+                },
+                "disallowAnonymousLinks": {
+                    "type": "boolean"
+                },
+                "disallowRegistration": {
+                    "type": "boolean"
+                },
+                "reportEmail": {
+                    "type": "string"
+                }
+            }
+        },
         "replicaCount": {
             "type": "integer"
         },
