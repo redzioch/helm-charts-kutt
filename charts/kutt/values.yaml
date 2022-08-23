@@ -38,7 +38,6 @@ customDomain:
   port: 3000
   useHttps: false
 
-
 envSecrets:
   google:
     analytics: ""
