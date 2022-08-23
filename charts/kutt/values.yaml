@@ -16,10 +16,6 @@ imagePullSecrets: []
 env:
   - name: ADMIN_EMAILS
     value: ""
-  - name: CUSTOM_DOMAIN_USE_HTTPS
-    value: "false"
-  - name: DEFAULT_DOMAIN
-    value: "localhost:3000"
   - name: DEFAULT_MAX_STATS_PER_LINK
     value: "5000"
   - name: DISALLOW_ANONYMOUS_LINKS
@@ -36,6 +32,12 @@ env:
     value: "Kutt"
   - name: USER_LIMIT_PER_DAY
     value: "50"
+
+customDomain:
+  hostname: localhost
+  port: 3000
+  useHttps: false
+
 
 envSecrets:
   google:
