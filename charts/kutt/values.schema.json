@@ -23,7 +23,7 @@
             }
         },
         "env": {
-            "type": "array",
+            "type": ["array", "null"],
             "items": {
                 "type": "object",
                 "properties": {
@@ -225,7 +225,10 @@
             "type": "object",
             "properties": {
                 "adminEmails": {
-                    "type": ["array", "null"]
+                    "type": ["array", "null"],
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "siteName": {
                     "type": "string"
