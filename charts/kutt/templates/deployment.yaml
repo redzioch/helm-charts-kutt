@@ -158,9 +158,9 @@ spec:
             {{- end }}
             # Custom Domain Settings
             - name: DEFAULT_DOMAIN
-              value: "{{ .Values.customDomain.hostname }}:{{ .Values.customDomain.port }}"
+              value: "{{ .Values.appConfig.customDomain.hostname }}:{{ .Values.appConfig.customDomain.port }}"
             - name: CUSTOM_DOMAIN_USE_HTTPS
-              value: "{{ .Values.customDomain.useHttps }}"
+              value: "{{ .Values.appConfig.customDomain.useHttps }}"
             # Application Settings
             - name: ADMIN_EMAILS
               value: {{ join "," .Values.appConfig.adminEmails | quote}}

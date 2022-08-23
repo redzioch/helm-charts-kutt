@@ -15,10 +15,11 @@ imagePullSecrets: []
 # Secret Keys and mail settings are provided through their own values `secretEnvs` and `mail`.
 env:
 
-customDomain:
-  hostname: localhost
-  port: 3000
-  useHttps: false
+appConfig:
+  customDomain:
+    hostname: localhost
+    port: 3000
+    useHttps: false
 
 appConfig:
   ## @param appConfig.adminEmails Set array of emails (strings)
