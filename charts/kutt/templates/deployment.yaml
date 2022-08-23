@@ -123,6 +123,11 @@ spec:
                   key: {{ include "redis.secretPasswordKey" .Subcharts.redis }}
             {{- end }}
             {{- end }}
+            # Custom Domain Settings
+            - name: DEFAULT_DOMAIN
+              value: "{{ .Values.customDomain.hostname }}:{{ .Values.customDomain.port }}"
+            - name: CUSTOM_DOMAIN_USE_HTTPS
+              value: "{{ .Values.customDomain.useHttps }}"
             # Application Settings
             - name: ADMIN_EMAILS
               value: {{ join "," .Values.appConfig.adminEmails | quote}}
