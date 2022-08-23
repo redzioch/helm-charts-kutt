@@ -14,10 +14,11 @@ imagePullSecrets: []
 # Please see https://github.com/thedevs-network/kutt/blob/develop/.docker.env for complete list of environment variables.
 # Secret Keys and mail settings are provided through their own values `secretEnvs` and `mail`.
 env:
-  - name: CUSTOM_DOMAIN_USE_HTTPS
-    value: "false"
-  - name: DEFAULT_DOMAIN
-    value: "localhost:3000"
+
+customDomain:
+  hostname: localhost
+  port: 3000
+  useHttps: false
 
 appConfig:
   ## @param appConfig.adminEmails Set array of emails (strings)
