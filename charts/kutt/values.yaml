@@ -33,10 +33,11 @@ env:
   - name: USER_LIMIT_PER_DAY
     value: "50"
 
-customDomain:
-  hostname: localhost
-  port: 3000
-  useHttps: false
+appConfig:
+  customDomain:
+    hostname: localhost
+    port: 3000
+    useHttps: false
 
 envSecrets:
   google:

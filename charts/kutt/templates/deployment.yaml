@@ -123,9 +123,9 @@ spec:
             {{- end }}
             # Custom Domain Settings
             - name: DEFAULT_DOMAIN
-              value: "{{ .Values.customDomain.hostname }}:{{ .Values.customDomain.port }}"
+              value: "{{ .Values.appConfig.customDomain.hostname }}:{{ .Values.appConfig.customDomain.port }}"
             - name: CUSTOM_DOMAIN_USE_HTTPS
-              value: "{{ .Values.customDomain.useHttps }}"
+              value: "{{ .Values.appConfig.customDomain.useHttps }}"
           {{- with .Values.securityContext }}
           securityContext:
             {{- toYaml . | nindent 12 }}
